@@ -1,4 +1,4 @@
-<button class="btn btn-primary" onClick="$('#members').modal('show');">Add</button>
+<button class="btn btn-primary" onClick="load_member_form()">Add</button>
 <hr>
 <table id="member_table" class="table table-bordered">
 	<thead>
@@ -36,16 +36,16 @@
 </table>
 
 <!-- MODALS -->
-<div class="modal fade" id="members">	
+<div class="modal fade" id="members_modal">	
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Default Modal</h4>
+        <h4 class="modal-title">Add Member</h4>
       </div>
       <div class="modal-body">
-        <p>One fine body&hellip;</p>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
@@ -53,5 +53,29 @@
       </div>
     </div>
   </div>
+
+
 </div>
 <!-- MODALS -->
+
+<script>
+$(document).ready(function(){
+	$("input[name='gender']").bootstrapSwitch({
+	    'animate': true,
+	    'size': 'small', 
+	    'handleWidth': '30px',
+	    'onSwitchChange': function(event, state) {
+	    	if(state==true){
+    	 		$(this).val('F');
+	    	}else {
+    	  		$(this).val('M');
+	    	}
+	    }
+	});
+
+
+    $('input[name="birthdate"]').datepicker({
+      autoclose: true
+    })
+});
+</script

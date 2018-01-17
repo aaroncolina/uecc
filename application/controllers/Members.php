@@ -8,9 +8,14 @@ class Members extends CI_Controller {
 		$this->data['controller'] = $this->router->fetch_class();
 		$this->data['method'] = $this->router->fetch_method();
 	}
+
 	public function index()
 	{	
 		$this->data['member_list'] = $this->Members_model->get_member_list();
 		build_page($this->data['controller'].'/'.$this->data['controller'].'_main', $this->data);
+	}
+
+	public function load_member_form(){
+		echo json_encode($this->load->view($this->data['controller'].'/'.$this->data['controller'].'_form.php', $this->data, true));
 	}
 }

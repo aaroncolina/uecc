@@ -20,7 +20,26 @@ $(document).ready(function(){
 
 
 /* Functionalities */
-function view_member_profile(){
+function load_member_form(id){
+	$('#members_modal').modal('show');
+    var url = base_url + controller + '/load_member_form'
+    $.ajax({url,
+          type: "GET",
+          async: true,
+          dataType: "json",
+          data: {
+          	'id' : id
+          },
+          success: function(data) {
+           $('#members_modal .modal-body').hide()
+           								  .empty()
+                               			  .append(data)
+                           			  	  .fadeIn();
+          }
+      });
+}
+
+function view_member(){
 	alert('Are you sure you want to delete this Member?');
 }
 
@@ -31,3 +50,4 @@ function edit_member(){
 function delete_member(){
 	alert('Are you sure you want to delete this Member?');
 }
+

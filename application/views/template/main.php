@@ -2,7 +2,7 @@
 <html>
 <?php echo $header; ?>
 <?php echo $data_parsed_to_js; ?>
-<body class="hold-transition skin-purple sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
 <div class="loading">Loading&#8230;</div>
 <div class="wrapper">
 	<?php echo $side_navbar; ?>

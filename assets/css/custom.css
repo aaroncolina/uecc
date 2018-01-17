@@ -1,3 +1,17 @@
+/*  CUSTOM CSS   */
+#members_modal .modal-dialog{
+  width: 90%;
+}
+
+.border-right-gray{
+  border-right: 1px solid #e5e5e5;
+}
+
+/**/
+
+
+
+
 .header-logo {
 	width: 	20%;
 	height:	20%;
